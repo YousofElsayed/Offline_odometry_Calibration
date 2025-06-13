@@ -1,6 +1,6 @@
 # Robot Simulation and Calibration
 
-This repository contains code and instructions to run robot simulations in Gazebo, perform sensor calibration, and execute test trajectories using the calibrated values.
+This repository contains code and instructions to run robot simulations in Gazebo, perform calibrations for the kinematic parameters wheelbase and right- and left wheel radii, and execute test trajectories using the calibrated values.
 
 ## Getting Started
 
