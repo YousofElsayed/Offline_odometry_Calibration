@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<launch>
+
+    <!-- Create gazebo world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <!-- Uncomment if you want to load a specific world -->
+        <!-- <arg name="world_name" value="$(find bachelor_project)/maps/10by10_maze.world_1.xml" /> -->
+        <arg name="gui" value="true" />
+        <arg name="use_sim_time" value="true" />
+        <arg name="paused" value="false" />
+    </include>
+
+    <!-- Export the model to environment variable -->
+    <env name="TURTLEBOT3_MODEL" value="waffle"/>
+
+    <!-- Load Waffle model description -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_waffle.urdf.xacro" />
+
+    <!-- Spawn the TurtleBot3 Waffle -->
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf"
+          args="-urdf -model turtlebot3_waffle -param robot_description -x 0 -y 0 -z 0 -Y 0" />
+
+    <!-- Optional: Your previous AMCL + mapping setup is still valid and can be uncommented if needed -->
+
+</launch>

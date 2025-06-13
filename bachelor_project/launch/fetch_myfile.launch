@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <!--include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="gui" value="true" />
+    <arg name="use_sim_time" value="true" />
+    <arg name="paused" value="false" />
+  </include-->
+  <include file="$(find fetch_gazebo)/launch/simulation.launch">
+  <arg name="gui" value="true" />
+  <!--arg name="use_sim_time" value="true" /-->
+  </include>
+
+
+  <!--param name="robot_description" command="$(find xacro)/xacro '$(find fetch_description)/robots/fetch.urdf.xacro'" /-->
+  <!--param name="robot_description" textfile="$(find fetch_description)/robots/fetch.urdf" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" output="screen" /-->
+    <!---x 0 -y 0 -z 0 -Y 0"-->
+
+  <!--node pkg="gazebo_ros" type="spawn_model" name="spawn_fetch"
+        args="-urdf -param robot_description -model fetch  "/-->
+
+</launch>
+
+

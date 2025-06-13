@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="x" default="0.0" />
+  <arg name="y" default="0.0" />
+  <arg name="z" default="0.0" />
+  <arg name="robot_namespace" default="p3dx" />
+
+  <!-- Start Gazebo empty world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+  </include>
+
+  <!-- Load Pioneer 3DX URDF and pass required argument -->
+  <param name="robot_description" 
+         command="$(find xacro)/xacro $(find p3dx_description)/urdf/p3dx/pioneer3dx.xacro robot_namespace:=$(arg robot_namespace)" />
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="state_pub"/>
+  <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_pub"/>
+
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_p3dx"
+        args="-urdf -param robot_description -model $(arg robot_namespace)
+              -x $(arg x) -y $(arg y) -z $(arg z)" />
+
+</launch>
