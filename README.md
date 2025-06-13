@@ -11,11 +11,11 @@ Follow these steps to prepare your workspace, launch the simulation, perform cal
 ## Prepare Workspace
 
 1. Build the ROS workspace:
-2. 
+
   `catkin_make`
 
 3. Start the ROS master:
-4. 
+
   `roscore`
 
 ---
