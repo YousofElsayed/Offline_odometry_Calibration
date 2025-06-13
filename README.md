@@ -30,7 +30,6 @@ To start the simulation environment with the Pioneer 3-DX robot, run the followi
   `roslaunch pioneer_myfile.launch`
 
 ---
----
 
 ## Starting Calibration Nodes
 Run the calibration scripts to obtain calibrated kinematic parameter values:
