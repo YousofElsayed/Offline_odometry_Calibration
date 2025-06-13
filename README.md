@@ -21,8 +21,12 @@ Follow these steps to prepare your workspace, launch the simulation, perform cal
 ## Launch Gazebo Simulation Environment and Robot
 
 To start the simulation environment with the TurtleBot3 Burger robot, run the following launch file:
+
   `roslaunch turtle_burger_myfile.launch `
+
+  
 To start the simulation environment with the Pioneer 3-DX robot, run the following launch file:
+
   `roslaunch pioneer_myfile.launch`
 
 ---
@@ -32,19 +36,26 @@ To start the simulation environment with the Pioneer 3-DX robot, run the followi
 Run the calibration scripts to obtain calibrated kinematic parameter values:
 
 To use the Triangle calibration Method run:
+
   `python3 trian_cal.py`
+  
 To use the Accurate UMBmark Method run:
+
   `python3 acc_umb.py`
+  
 To use the Rotational Calibration Method run:
+
   ` python3 rot_cal.py`
   
 ---
 
 ## Run Test Trajectories with Calibrated Values
 After obtanining the calibrated values from the calibration nodes run the node below to drive the test trajectories using the new values.
+
   `python3 experiment_3.py`
 
 ## Plot robot trajectories:
+
   `python3 plot_experiment_3.py`
 
 
